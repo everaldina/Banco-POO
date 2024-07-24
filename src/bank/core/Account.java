@@ -75,7 +75,7 @@ public abstract class Account implements IAccount{
     }
 
     private static String generateAccountNumber(){
-        String numberString = String.valueOf(accountCounter);
+        String numberString = String.valueOf(accountCounter++);
         int sizeOfNumber = numberString.length();
         String result = "";
 
