@@ -1,3 +1,4 @@
+import bank.core.Account;
 import bank.core.Bank;
 import bank.utils.Gender;
 
@@ -20,11 +21,11 @@ public class App {
         // creating accounts bank1
         bank.makeCheckingAccount("001", client1, 100);
         bank.makeCheckingAccount("001", client2, 100);
-        bank.makeCheckingAccount("001", client2, 100);
+        bank.makeSavingsAccount("001", client2);
 
         // creating accounts bank2
         bank2.makeCheckingAccount("001", client3, 100);
-        bank2.makeCheckingAccount("001", client4, 100);
+        bank2.makeSavingsAccount("001", client4);
         bank2.makeCheckingAccount("001", client1, 100);
 
         // printing accounts
@@ -32,6 +33,11 @@ public class App {
         bank.printAccounts();
         System.out.println("Itau");
         bank2.printAccounts();
+
+        Account account1 = bank.getAccount("000001");
+        Account account2 = bank.getAccount("000000");
+        Account account3 = bank2.getAccount("000003");
+        Account account4 = bank2.getAccount("000004");
 
 
     }
