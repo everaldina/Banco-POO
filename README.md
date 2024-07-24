@@ -1,18 +1,22 @@
-## Getting Started
+# Bank System
+A simple bank system made in Java that allows users to create accounts, make transactions.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Features
+### Create account
+- There are two types of accounts: `Savings` and `Cashing`
+- `Cashing` account has a overdraft limit, while `Savings` account does not
+### Deposit money
+- Deposit money to the account
+### Withdraw money
+- Withdraw money from the account
+- Checks if the amount is valid
+### Transfer money
+- Transfer money to another account
+- Checks if the amount is valid
+### Check balance
+- Check the balance of the account
+- Uses custom currency format (e.g. `R$ 1000.00`)
+### Pay bills
+- Pay bills using the account
+- Checks if the amount is valid
+- `Cashing` account can pay bills even if the balance is negative
