@@ -7,6 +7,13 @@ import java.time.LocalDate;
 import bank.client.Client;
 
 public class App {
+
+    public static void showBalances(Account [] accounts) {
+        System.out.println("printing balance");
+        for (Account account : accounts) {
+            account.printBalance();
+        }
+    }
     public static void main(String[] args) throws Exception {
         // creating a bank
         Bank bank = new Bank("Banco do Brasil");
@@ -38,6 +45,46 @@ public class App {
         Account account2 = bank.getAccount("000000");
         Account account3 = bank2.getAccount("000003");
         Account account4 = bank2.getAccount("000004");
+
+        Account [] accounts = {account1, account2, account3, account4};
+
+
+        System.out.println("depositing");
+        account1.deposit(200);
+        account2.deposit(200);
+        account3.deposit(200);
+        account4.deposit(200);
+
+        showBalances(accounts);
+
+        System.out.println("transfering");
+        account1.transfer(50, account2);
+        account3.transfer(50, account4);
+        account2.transfer(10, account4);
+
+
+        showBalances(accounts);
+
+
+        System.out.println("withdrawing");
+        account1.withdraw(50);
+        account4.withdraw(50);
+
+        showBalances(accounts);
+
+
+        System.out.println("paying bills");
+        account1.pay(100);
+        account2.pay(100);
+        account3.pay(100);
+        account4.pay(100);
+
+        showBalances(accounts);
+
+        // TODO: test overdraft in checking account
+        // TODO: test wrong amount in deposit, withdraw, transfer and pay
+
+
 
 
     }
